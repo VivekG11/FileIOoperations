@@ -5,15 +5,18 @@ namespace FileIoOperations
 {
     class Program
     {
+        static string filepath = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\details.txt";
         static void Main(string[] args)
         {
             Console.WriteLine("FileIOOperations.............");
-            Program.FileExists();
+          //  Program.FileExists();
+            Program.ReadFile();
         }
 
         public static void FileExists()
         {
-            string filepath = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\details.txt";
+            //inserting file path
+          //  string filepath = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\details.txt";
             if(File.Exists(filepath))
             {
                 Console.WriteLine("File exists..");
@@ -21,6 +24,15 @@ namespace FileIoOperations
             else
             {
                 Console.WriteLine("No such file exists...");
+            }
+        }
+        public static void ReadFile()
+        {
+            //Reading data from file using string array
+            string[] lines = File.ReadAllLines(filepath);
+            foreach(var i in lines)
+            {
+                Console.WriteLine(i);
             }
         }
     }
