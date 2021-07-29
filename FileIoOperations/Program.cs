@@ -11,7 +11,8 @@ namespace FileIoOperations
             Console.WriteLine("FileIOOperations.............");
             //  Program.FileExists();
             // Program.ReadFile();
-            Program.ReadAllText();
+            //  Program.ReadAllText();
+            Program.FileCopy();
         }
 
         public static void FileExists()
@@ -43,6 +44,13 @@ namespace FileIoOperations
             string data = File.ReadAllText(filepath);
             Console.WriteLine(data);
            
+        }
+
+        public static void FileCopy()
+        {
+            //using copy method to copy an existing file
+            string copyPath = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\new.txt";
+            File.Copy(filepath, copyPath);
         }
     }
 }
