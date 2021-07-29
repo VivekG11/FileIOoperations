@@ -9,8 +9,9 @@ namespace FileIoOperations
         static void Main(string[] args)
         {
             Console.WriteLine("FileIOOperations.............");
-          //  Program.FileExists();
-            Program.ReadFile();
+            //  Program.FileExists();
+            // Program.ReadFile();
+            Program.ReadAllText();
         }
 
         public static void FileExists()
@@ -34,6 +35,14 @@ namespace FileIoOperations
             {
                 Console.WriteLine(i);
             }
+        }
+
+        public static void ReadAllText()
+        {
+            //using ReadAllText method to display data without for loop
+            string data = File.ReadAllText(filepath);
+            Console.WriteLine(data);
+           
         }
     }
 }
