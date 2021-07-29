@@ -13,7 +13,8 @@ namespace FileIoOperations
             // Program.ReadFile();
             //  Program.ReadAllText();
             // Program.FileCopy();
-            Program.DelFile();
+            //Program.DelFile();
+            Program.ReadFromStreamReader();
         }
 
         public static void FileExists()
@@ -59,6 +60,17 @@ namespace FileIoOperations
             string path = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\new.txt";
             File.Delete(path);
 
+        }
+        public static void ReadFromStreamReader()
+        {
+            using(StreamReader reader = File.OpenText(filepath))
+            {
+                string s = "";
+                while((s = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
         }
     }
 }
