@@ -14,7 +14,8 @@ namespace FileIoOperations
             //  Program.ReadAllText();
             // Program.FileCopy();
             //Program.DelFile();
-            Program.ReadFromStreamReader();
+            // Program.ReadFromStreamReader();
+            Program.WriteusingSTreamWriter();
         }
 
         public static void FileExists()
@@ -63,6 +64,7 @@ namespace FileIoOperations
         }
         public static void ReadFromStreamReader()
         {
+            //using inbuilt stream reader class to read data from a file
             using(StreamReader reader = File.OpenText(filepath))
             {
                 string s = "";
@@ -70,6 +72,17 @@ namespace FileIoOperations
                 {
                     Console.WriteLine(s);
                 }
+            }
+        }
+        public static void WriteusingSTreamWriter()
+        {
+            using(StreamWriter writer = File.AppendText(filepath))
+            {
+                writer.WriteLine(" TVS - Fellowship");
+                writer.Close();
+
+                Console.WriteLine(File.ReadAllText(filepath));
+
             }
         }
     }
