@@ -12,7 +12,8 @@ namespace FileIoOperations
             //  Program.FileExists();
             // Program.ReadFile();
             //  Program.ReadAllText();
-            Program.FileCopy();
+            // Program.FileCopy();
+            Program.DelFile();
         }
 
         public static void FileExists()
@@ -51,6 +52,13 @@ namespace FileIoOperations
             //using copy method to copy an existing file
             string copyPath = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\new.txt";
             File.Copy(filepath, copyPath);
+        }
+        public static void DelFile()
+        {
+            //using delete method to delete a particular file
+            string path = @"C:\Users\VIVEK\source\repos\FileIoOperations\FileIoOperations\new.txt";
+            File.Delete(path);
+
         }
     }
 }
