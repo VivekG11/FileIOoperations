@@ -15,7 +15,9 @@ namespace FileIoOperations
             // Program.FileCopy();
             //Program.DelFile();
             // Program.ReadFromStreamReader();
-            Program.WriteusingSTreamWriter();
+            // Program.WriteusingSTreamWriter();
+           // BinaryOperations.Serialization();
+            BinaryOperations.DeSerialization();
         }
 
         public static void FileExists()
